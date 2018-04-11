@@ -122,14 +122,7 @@
                 d.wx = +d.wx;
                 d.wy = +d.wy;
                 d.wz = +d.wz;
-
-                // console.log(d.timestamp)
             });
-
-            //         sort years ascending
-            //          data.sort(function(a, b) {
-            //              return a["Date"] - b["Date"];
-            //          })
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) { return d.timestamp; }));
@@ -175,8 +168,6 @@
             // Add the Y Axis
             svg.append("g")
                 .call(d3.axisLeft(y));
-
-
 
         }
         // Get the data
