@@ -1,0 +1,112 @@
+ body {
+     background-color: #282828;
+ }
+
+ .container {
+     margin-top: 5rem;
+
+     .panel {
+         .panel-heading {
+             p {
+                 margin-top: 1rem;
+             }
+         }
+         .panel-body {
+             svg {
+                 .line,
+                 .line2,
+                 .line3,
+                 .line4,
+                 .line5,
+                 .line6 {
+                     fill: none;
+                     stroke-width: 2px;
+                 }
+                 .line {
+                     stroke: steelblue;
+                 }
+
+                 .line2 {
+                     stroke: #00b6ff;
+                 }
+
+                 .line3 {
+                     stroke: darkblue;
+                 }
+
+                 .line4 {
+                     stroke: purple;
+                 }
+
+                 .line5 {
+                     stroke: rebeccapurple;
+                 }
+
+                 .line6 {
+                     stroke: violet;
+                 }
+             }
+             .table-responsive {
+                 margin-top: 2rem;
+                 .table-bordered {
+                     text-align: center;
+                     table {
+                         thead {
+                             th {
+                                 text-align: center;
+                             }
+                         }
+                     }
+                 }
+             }
+             #axTable {
+                 .table-responsive {
+                     &:nth-of-type(1) {
+                         margin-top: 0;
+                         &:before {
+                             content: "Question 1";
+                         }
+                     }
+                     &:nth-of-type(2) {
+                         margin-top: 0;
+                         &:before {
+                             content: "Question 2";
+                         }
+                     }
+                 }
+             }
+             .chart-info {
+                 display: none;
+                 li {
+                     display: inline;
+                     padding: 1rem;
+                     color: #fff;
+                     &:first-of-type {
+                         background-color: steelblue;
+                     }
+                     &:nth-of-type(2) {
+                         background-color: #00b6ff;
+                     }
+                     &:nth-of-type(3) {
+                         background-color: #001b85;
+                     }
+                     &:nth-of-type(4) {
+                         background-color: purple;
+                     }
+                     &:nth-of-type(5) {
+                         background-color: rebeccapurple;
+                     }
+                     &:nth-of-type(6) {
+                         background-color: violet;
+                     }
+                 }
+             }
+             .chart {
+                 overflow-x: scroll;
+                 overflow-y: hidden;
+                 white-space: nowrap;
+                 margin-top: 3rem;
+             }
+         }
+     }
+ }

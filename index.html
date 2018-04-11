@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LastSwing Data</title>
+    <link rel="stylesheet" href="/css/lastSwing.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/js/dataScan.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+    body {
+        background-color: #282828;
+    }
+
+    .container {
+        margin-top: 5rem;
+    }
+
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 2px;
+    }
+
+    .line2 {
+        fill: none;
+        stroke: #00b6ff;
+        stroke-width: 2px;
+    }
+
+    .line3 {
+        fill: none;
+        stroke: darkblue;
+        stroke-width: 2px;
+    }
+
+    .line4 {
+        fill: none;
+        stroke: purple;
+        stroke-width: 2px;
+    }
+
+    .line5 {
+        fill: none;
+        stroke: rebeccapurple;
+        stroke-width: 2px;
+    }
+
+    .line6 {
+        fill: none;
+        stroke: violet;
+        stroke-width: 2px;
+    }
+
+    .panel .table-bordered {
+        text-align: center;
+    }
+
+    .panel .table-responsive table thead th {
+        text-align: center;
+    }
+
+    .panel .panel-heading p {
+        margin-top: 1rem;
+    }
+
+    .panel .panel-body .table-responsive {
+    	margin-top: 2rem;
+    }
+
+    #axTable .table-responsive:nth-of-type(1) {	
+    	margin-top: 0;
+    }
+
+    #axTable .table-responsive:nth-of-type(2) {	
+    	margin-top: 0;
+    }
+
+    #axTable .table-responsive:nth-of-type(1):before {
+        content: "Question 1";
+    }
+
+    #axTable .table-responsive:nth-of-type(2):before {
+        content: "Question 2";
+        text-align: left !important;
+    }
+
+    .chart {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        margin-top: 3rem;
+    }
+
+    .chart-info {
+        display: none;
+    }
+
+    .chart-info li {
+        display: inline;
+        padding: 1rem;
+        color: #fff;
+    }
+
+    .chart-info li:first-of-type {
+        background-color: steelblue;
+    }
+
+    .chart-info li:nth-of-type(2) {
+        background-color: #00b6ff;
+    }
+
+    .chart-info li:nth-of-type(3) {
+        background-color: #001b85;
+    }
+
+    .chart-info li:nth-of-type(4) {
+        background-color: purple;
+    }
+
+    .chart-info li:nth-of-type(5) {
+        background-color: rebeccapurple;
+    }
+
+    .chart-info li:nth-of-type(6) {
+        background-color: violet;
+    }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Swing Data</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div id="axTable"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="ayTable"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="azTable"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="wxTable"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="wyTable"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="wzTable"></div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <a id="getSwingData" class="btn btn-primary" type="button">Show Data</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Swing Data Chart</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="chart-info">
+                        <div>
+                            <p>Legend:</p>
+                            <ul>
+                                <li>Ax</li>
+                                <li>Ay</li>
+                                <li>Az</li>
+                                <li>Wx</li>
+                                <li>Wy</li>
+                                <li>Wz</li>
+                            </ul>
+                            <small><em>* Chart scrolls horizontally</em></small>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <div id="swingChart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <a id="generateChart" class="btn btn-primary" type="button">Generate Chart</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

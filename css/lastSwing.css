@@ -1,0 +1,90 @@
+body {
+  background-color: #282828;
+}
+
+.container {
+  margin-top: 5rem;
+}
+.container .panel .panel-heading p {
+  margin-top: 1rem;
+}
+.container .panel .panel-body svg .line,
+.container .panel .panel-body svg .line2,
+.container .panel .panel-body svg .line3,
+.container .panel .panel-body svg .line4,
+.container .panel .panel-body svg .line5,
+.container .panel .panel-body svg .line6 {
+  fill: none;
+  stroke-width: 2px;
+}
+.container .panel .panel-body svg .line {
+  stroke: steelblue;
+}
+.container .panel .panel-body svg .line2 {
+  stroke: #00b6ff;
+}
+.container .panel .panel-body svg .line3 {
+  stroke: darkblue;
+}
+.container .panel .panel-body svg .line4 {
+  stroke: purple;
+}
+.container .panel .panel-body svg .line5 {
+  stroke: rebeccapurple;
+}
+.container .panel .panel-body svg .line6 {
+  stroke: violet;
+}
+.container .panel .panel-body .table-responsive {
+  margin-top: 2rem;
+}
+.container .panel .panel-body .table-responsive .table-bordered {
+  text-align: center;
+}
+.container .panel .panel-body .table-responsive .table-bordered table thead th {
+  text-align: center;
+}
+.container .panel .panel-body #axTable .table-responsive:nth-of-type(1) {
+  margin-top: 0;
+}
+.container .panel .panel-body #axTable .table-responsive:nth-of-type(1):before {
+  content: "Question 1";
+}
+.container .panel .panel-body #axTable .table-responsive:nth-of-type(2) {
+  margin-top: 0;
+}
+.container .panel .panel-body #axTable .table-responsive:nth-of-type(2):before {
+  content: "Question 2";
+}
+.container .panel .panel-body .chart-info {
+  display: none;
+}
+.container .panel .panel-body .chart-info li {
+  display: inline;
+  padding: 1rem;
+  color: #fff;
+}
+.container .panel .panel-body .chart-info li:first-of-type {
+  background-color: steelblue;
+}
+.container .panel .panel-body .chart-info li:nth-of-type(2) {
+  background-color: #00b6ff;
+}
+.container .panel .panel-body .chart-info li:nth-of-type(3) {
+  background-color: #001b85;
+}
+.container .panel .panel-body .chart-info li:nth-of-type(4) {
+  background-color: purple;
+}
+.container .panel .panel-body .chart-info li:nth-of-type(5) {
+  background-color: rebeccapurple;
+}
+.container .panel .panel-body .chart-info li:nth-of-type(6) {
+  background-color: violet;
+}
+.container .panel .panel-body .chart {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-top: 3rem;
+}
