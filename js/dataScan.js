@@ -33,7 +33,7 @@
                 .then(function(jsonData) {
                     var obj = jsonData;
 
-                    obj.forEach(function(data, indexBegin, indexEnd, threshold, winLength, index) {
+                    obj.forEach(function(data) {
                         let timeStamp = data.timestamp;
                         let ax = data.ax;
                         let ay = data.ay;
