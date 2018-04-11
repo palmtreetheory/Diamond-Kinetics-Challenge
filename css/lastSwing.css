@@ -5,6 +5,10 @@ body {
 .container {
   margin-top: 5rem;
 }
+.container h1 {
+  color: #fff;
+  margin-bottom: 2rem;
+}
 .container .panel .panel-heading p {
   margin-top: 1rem;
 }
